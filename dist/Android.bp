@@ -44,10 +44,6 @@ cc_defaults {
 
         // Default value causes sqlite3_open_v2 to return error if DB is missing.
         "-ftrivial-auto-var-init=pattern",
-
-        // Turn off the new pass manager due to miscompile.
-        // http://b/131854833
-        "-fno-experimental-new-pass-manager",
     ],
 
     target: {
@@ -99,6 +95,15 @@ cc_library {
             static_libs: [
                 "liblog",
             ],
+        },
+        not_windows: {
+            shared_libs: [
+                "libicui18n",
+                "libicuuc",
+            ],
+
+            // include android specific methods
+            whole_static_libs: ["libsqlite3_android"],
         },
         windows: {
             enabled: true,
