@@ -23,6 +23,7 @@ cc_defaults {
         "-Werror",
         "-Wno-unused-function",
         "-Wno-unused-variable",
+        "-O3",
     ],
     srcs: [
         "PhoneNumberUtils.cpp",
