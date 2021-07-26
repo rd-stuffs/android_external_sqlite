@@ -75,6 +75,7 @@ cc_defaults {
         "-DSQLITE_ALLOW_ROWID_IN_VIEW",
         "-Wno-unused-parameter",
         "-Werror",
+        "-O3",
 
         // Default value causes sqlite3_open_v2 to return error if DB is missing.
         "-ftrivial-auto-var-init=pattern",
